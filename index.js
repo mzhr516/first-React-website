@@ -1,58 +1,70 @@
-function app() {
-  return [
-    React.createElement(h1),
-    React.createElement(h2),
-    React.createElement(h3),
-    React.createElement(h4),
-    React.createElement(h5),
-    React.createElement(h6),
-    React.createElement(list),
-    
-  ];
-}
-function h1() {
-  return React.createElement(
-    "h1",
-    { class: "main" },
-    "this is my first react element"
+function App() {
+  return (
+    <div>
+      <List />
+
+      {/* {// call the component} */}
+      <H1 />
+      <H2 />
+      <H3 />
+      <Table/>
+      {/* {Table()} */}
+    </div>
   );
 }
-function h2() {
-  return React.createElement("h2", { id: "h2" }, "this is h2 tag");
+
+// Table()
+function H1() {
+  return <h1 className="h1-class">hello this is h1 tag</h1>;
 }
-function h3() {
-  return React.createElement("h3", { id: "h3" }, "this is h3 tag");
+function H2() {
+  return <h2>this is h2 tag</h2>;
 }
-function h4() {
-  return React.createElement("h4", { id: "h4" }, "this is h4 tag");
+function H3() {
+  return <h3>this is h3</h3>;
 }
-function h5() {
-  return React.createElement("h5", { id: "h5" }, "this is h5 tag");
-}
-function h6() {
-  return React.createElement("h6", { id: "h6" }, "this is h6 tag");
+// function h4() {
+//   return React.createElement("h4", { id: "h4" }, "this is h4 tag");
+// }
+// function h5() {
+//   return React.createElement("h5", { id: "h5" }, "this is h5 tag");
+// }
+// function h6() {
+//   return React.createElement("h6", { id: "h6" }, "this is h6 tag");
+// }
+
+function List() {
+  return (
+    <div>
+      <ul>
+        <li>mango</li>
+        <li>apple</li>
+        <li>orange</li>
+      </ul>
+    </div>
+  );
 }
 
-function list() {
-  return React.createElement("div",{ class: "fuitsList" },
-      React.createElement(
-        "ul",
-        {},
-        React.createElement("li", {}, "mango"),
-        React.createElement("li", {}, "apple"),
-        React.createElement("li", {}, "orange"),
-        React.createElement("li",{},"banana")
-      )
-    )
-  
+function Table() {
+  return (
+    <table>
+      <tr>
+        <th>sr. no.</th>
+        <th>name</th>
+        <th>roll num</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>teki</td>
+        <td>001</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>mazhar</td>
+        <td>002</td>
+      </tr>
+    </table>
+  );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  React.createElement(app)
-);
-
-// React.createElement("h2", { id: "h2" }, "this is h2 tag"),
-// React.createElement("h3",{},"this is h3 tag"),
-// React.createElement("h4",{},"this is h4 tag"),
-// React.createElement("h5",{},"this is h5 tag"),
-// React.createElement("h6",{},"this is h6 tag")
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
